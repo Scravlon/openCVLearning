@@ -74,7 +74,6 @@ public class ColorBLob extends AppCompatActivity implements View.OnTouchListener
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         setContentView(R.layout.color_blob);
-
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -84,10 +83,7 @@ public class ColorBLob extends AppCompatActivity implements View.OnTouchListener
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.CAMERA}, PERMISSION_CAMARA);
             }
-        } else {
         }
-
-
         mOpenCvCameraView = findViewById(R.id.color_blob_detection_activity_surface_view);
         mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
